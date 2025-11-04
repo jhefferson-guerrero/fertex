@@ -32,7 +32,7 @@ function Contacto() {
               height="100%"
               style={{
                 border: 0,
-                borderRadius: '15px',
+                borderRadius: '12px',
               }}
               allowFullScreen=""
               loading="lazy"

@@ -193,7 +193,7 @@
 .intro-section {
     position: relative;
     background-color: #ffffff;
-    padding: 2rem 20%;
+    padding: 2rem 20% 4rem;
     text-align: left;
     z-index: 2;
 }
@@ -372,8 +372,8 @@
     text-align: center;
     font-size: 45px;
     font-weight: bold;
-    margin-bottom: 90px;
-    padding-top: 60px;
+    margin-bottom: 70px;
+    padding-top: 30px;
 }
 
 .disciplinas-title,
@@ -383,7 +383,7 @@
     text-align: center;
     font-size: 45px;
     font-weight: bold;
-    margin-bottom: 90px;
+    margin-bottom: 70px;
     padding-top: 30px; 
 }
 
@@ -411,7 +411,7 @@
     .nosotros-title,
     .disciplinas-title {
         font-size: 2rem;
-        margin-bottom: 50px;
+        margin-bottom: 60px;
         padding-top: 20px;
     }
 
@@ -463,8 +463,6 @@
     padding: 0 1rem;
     padding: 1rem 1rem 6rem;
 }
-
-
 
 .contacto-content {
     display: flex;
@@ -553,6 +551,7 @@
     .contacto-title {
         font-size: 2rem;
         margin-bottom: 50px;
+        padding-top: 10px;
     }
 
     .contacto-info h3 {
