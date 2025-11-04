@@ -1,0 +1,26 @@
+#root {
+  --blanco: #ffffff;
+  --oscuro: #1a1a1a;
+  --primario: #1983a3;
+  --gris-claro: #fcfcfc;
+  --gris-medio: #e0e0e0;
+  --gris-oscuro: #666666;
+  --azul-oscuro: #1f4e79;
+  --naranja: #F7842E;
+  width: 100%;
+  margin: 0;
+  text-align: center;
+}
+
+main {
+  margin: 0;
+  padding: 0;
+  padding-top: 90px;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
