@@ -42,43 +42,45 @@ function Galeria() {
   }, []);
 
   return (
-    <section id="galeria" className="galeria-container">
-      <h2 className="galeria-title">Galería</h2>
+    <div className="w-full -z-20">
+      <section id="galeria" className="max-w-[1425px] mx-auto px-4 pt-4 pb-12 text-(--oscuro)">
+        <h2 className="galeria-title">GALERÍA</h2>
 
-      <div ref={gridRef} className="columns-2 md:columns-4 gap-4">
-        {images.map((img, i) => (
-          <img 
-            key={i}
-            data-reveal
-            className="mb-4 rounded-xl cursor-pointer transform transition duration-300 hover:scale-98 opacity-0"
-            src={img.src}
-            alt={img.alt}
-            onClick={() => {
-              setSelectedImg(img.src);
-              document.body.style.overflow = "hidden";
-              document.body.classList.add("modal-open");
-            }}
-          />
-        ))}
-      </div>
-      
-    {selectedImg && (
-        <div 
-            className="fixed inset-0 bg-black/50 flex items-center justify-center z-[999]"
-            onClick={() => {
-            setSelectedImg(null);
-            document.body.style.overflow = "auto";
-            document.body.classList.remove("modal-open");
-            }}
-        >
+        <div ref={gridRef} className="columns-2 gap-1 md:columns-4 md:gap-2">
+          {images.map((img, i) => (
             <img 
-            src={selectedImg} 
-            className="rounded-lg shadow-lg animate-fadeIn max-h-[85%] max-w-[90%] md:max-w-[40%]"
-            alt=""
+              key={i}
+              data-reveal
+              className="mb-1 rounded-xl cursor-pointer transform transition duration-300 hover:scale-98 opacity-0 md:mb-2"
+              src={img.src}
+              alt={img.alt}
+              onClick={() => {
+                setSelectedImg(img.src);
+                document.body.style.overflow = "hidden";
+                document.body.classList.add("modal-open");
+              }}
             />
+          ))}
         </div>
-    )}
-    </section>
+        
+      {selectedImg && (
+          <div 
+              className="fixed inset-0 bg-black/50 flex items-center justify-center z-999"
+              onClick={() => {
+              setSelectedImg(null);
+              document.body.style.overflow = "auto";
+              document.body.classList.remove("modal-open");
+              }}
+          >
+              <img 
+              src={selectedImg} 
+              className="rounded-lg shadow-lg animate-fadeIn max-h-[85%] max-w-[90%] md:max-w-[40%]"
+              alt=""
+              />
+          </div>
+      )}
+      </section>
+    </div>
   );
 }
 

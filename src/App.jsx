@@ -1,5 +1,3 @@
-import { useState } from 'react'
-import './App.css'
 import Header from './components/Header'
 import Inicio from './components/Inicio'
 import Nosotros from './components/Nosotros'
@@ -12,13 +10,11 @@ function App() {
   return (
     <>
       <Header />
-      <main>
         <Inicio />
-          <Nosotros />
-          <Disciplina />
-          <Galeria />
-          <Contacto />
-      </main>
+        <Nosotros />
+        <Disciplina />
+        <Galeria />
+        <Contacto />
       <Footer />
     </>
   )

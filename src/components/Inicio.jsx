@@ -18,8 +18,7 @@ function Inicio() {
           </div>
         </div>
       </div>
-
-      {/* Sección blanca debajo */}
+      
       <div className="intro-section">
         <div className="cards-container">
 
@@ -40,7 +39,7 @@ function Inicio() {
           {/* Card 3 */}
           <div className="card card-red transform transition duration-300 hover:scale-102">
             <div className="card-icon"><FontAwesomeIcon icon={faHandHoldingHeart} /></div>
-            <h3 className="card-title">Compromiso con nuestros alumnos</h3>
+            <h3 className="card-title">Compromiso</h3>
             <p className="card-text">Nos dedicamos a apoyar a cada alumno para alcanzar su máximo potencial.</p>
           </div>
 

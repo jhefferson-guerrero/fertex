@@ -5,7 +5,7 @@
     position: relative;
     background: linear-gradient(180deg,rgba(36, 36, 36, 1) 0%, rgba(31, 31, 31, 1) 35%, rgba(26, 26, 26, 1) 69%, rgba(20, 20, 20, 1) 100%);
     font-size: 1.4rem;
-    box-shadow: 0 10px 4px rgba(126, 6, 6, 0.1);
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.3);
   }
 
 .footer-container{
@@ -31,13 +31,14 @@
 .footer-column h3 {
     font-weight: 600;
     margin: 19px 0 8px 0;
-    color: var(--naranja);
+    color: #fff;
 }
 
 .footer-column p {
     color: #fff;
     line-height: 1.6;
     font-size: 15px;
+    font-weight: 300;
 }
 
 .footer-social .social-icons {
@@ -50,11 +51,11 @@
     color: #fff;
     font-size: 1.8rem;
     text-decoration: none;
-    transition: transform 0.3s ease;
+    transition: transform 0.2s ease;
 }
 
 .footer-social a:hover {
-    transform: scale(1.2);
+    transform: scale(1.1);
 }
 
 .footer-bottom {

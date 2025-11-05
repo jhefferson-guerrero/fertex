@@ -1,4 +1,43 @@
+import { useEffect, useRef, useState } from 'react';
+
 function Disciplina() {
+  const [visibleCards, setVisibleCards] = useState([false, false, false]);
+  const cardRefs = useRef([]);
+
+  useEffect(() => {
+    const observers = cardRefs.current.map((cardRef, index) => {
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            setVisibleCards(prev => {
+              const newState = [...prev];
+              newState[index] = true;
+              return newState;
+            });
+          }
+        },
+        {
+          threshold: 0.2,
+          rootMargin: '0px'
+        }
+      );
+
+      if (cardRef) {
+        observer.observe(cardRef);
+      }
+
+      return observer;
+    });
+
+    return () => {
+      observers.forEach((observer, index) => {
+        if (cardRefs.current[index]) {
+          observer.unobserve(cardRefs.current[index]);
+        }
+      });
+    };
+  }, []);
+
     const disciplinas = [
     {
       nombre: "Taekwondo",
@@ -7,25 +46,45 @@ function Disciplina() {
     },
     {
       nombre: "Muay Thai",
-      imagen: "images/fertex-taekwondo-competencia-01.webp",
+      imagen: "images/fertex-muaythai-entrenamiento-05.webp",
       descripcion: "Boxeo tailandés tradicional que combina puños, codos, rodillas y patadas para un entrenamiento completo."
     },
     {
       nombre: "Capoeira",
-      imagen: "images/fertex-taekwondo-competencia-01.webp",
+      imagen: "images/fertex-capoeira-entrenamiento-01.webp",
       descripcion: "Arte marcial afro-brasileño que fusiona movimientos acrobáticos, música y expresión cultural en cada ginga."
     }
   ];
   
+  const getAnimationClasses = (index, isVisible) => {
+    const animations = [
+      // Primera carta
+      isVisible 
+        ? 'opacity-100 translate-y-0 lg:translate-x-0' 
+        : 'opacity-0 translate-y-[50px] lg:translate-y-0 lg:-translate-x-[50px]',
+      // Segunda carta
+      isVisible 
+        ? 'opacity-100 translate-y-0' 
+        : 'opacity-0 translate-y-[50px]',
+      // Tercera carta
+      isVisible 
+        ? 'opacity-100 translate-y-0 lg:translate-x-0' 
+        : 'opacity-0 translate-y-[50px] lg:translate-y-0 lg:translate-x-[50px]'
+    ];
+    
+    return animations[index];
+  };
+
   return (
     <div className="w-full bg-[#f8f8f8]">
       <section id="disciplina" className="max-w-[1250px] mx-auto px-4 pb-15 text-(--oscuro)">
-        <h2 className="disciplinas-title">Nuestras Disciplinas</h2>
+        <h2 className="disciplinas-title">DISCIPLINAS</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
           {disciplinas.map((disciplina, index) => (
             <div 
               key={index}
-              className="relative rounded-xl shadow-2xl overflow-hidden group cursor-pointer h-[420px] md:h-[470px] mx-auto w-85 max-w-[350px] md:max-w-none"
+              ref={el => cardRefs.current[index] = el}
+              className={`relative rounded-xl shadow-2xl overflow-hidden group cursor-pointer h-[420px] md:h-[470px] mx-auto w-90 max-w-[350px] md:max-w-none transition-all duration-1000 ease-out ${getAnimationClasses(index, visibleCards[index])}`}
             >
               <img 
                 src={disciplina.imagen} 
@@ -33,7 +92,7 @@ function Disciplina() {
                 className='w-full h-full object-cover transition-all duration-500 group-hover:scale-110 group-hover:brightness-75'
               />
               
-              <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/40 to-transparent lg:from-black/60 via-black/20"></div>
+              <div className="absolute inset-0 bg-linear-to-t from-black/70 via-black/40 to-transparent lg:from-black/60 lg:via-black/40"></div>
               
               <div className="absolute inset-0 flex flex-col justify-end p-6 md:p-8">
                 <h3 className="text-white text-3xl md:text-4xl font-bold mb-3 transition-all duration-300 group-hover:mb-4">
