@@ -1,8 +1,5 @@
 /**************************** INICIO ****************************/
-.start-container {
-    padding-top: 90px;
-}
-  
+
 .hero-section {
     position: relative;
     background-image: url('/images/fondo-inicio.webp');
@@ -13,7 +10,7 @@
     max-height: 600px;
     display: flex;
     align-items: flex-start;
-    padding-top: 5.5rem;
+    padding: 12rem 0 31rem;
     color: white;
     background-attachment: fixed;
     overflow: hidden;
@@ -40,38 +37,25 @@
 .hero-wrapper {
     position: relative;
     width: 100%;
+    padding: 0 1.8rem;
     max-width: 1300px;
     margin: 0 auto;
-    padding: 0 5rem;
     z-index: 2;
 }
 
 .hero-content {
     text-align: center;
+    padding-left: 0rem;
 }
 
-@media (min-width: 768px) {
-    .hero-content {
-        padding-right: 18rem;
-        text-align: left;
-    }
-}
 
 @media (min-width: 1300px) {
     .hero-content {
         padding-right: 23rem;
+        text-align: left;
+        padding-left: 3.5rem;
     }
 }
-
-.hero-content h2.hero-subtitle {
-    margin: 2rem 0 0 0;
-    font-size: 2.6rem;
-    font-weight: 500;
-    line-height: 1;
-    color: var(--naranja);
-    text-shadow: 0 0 1px var(--naranja);
-}
-
 
 .animate {
     font-family: "Saira Stencil One", sans-serif;
@@ -181,17 +165,10 @@
     }
 }
 
-.hero-content p.hero-text {
-    margin: 1.5rem 0;
-    font-size: 1.4rem;
-    font-weight: 400;
-    line-height: 1.2;
-}
-
 .intro-section {
     position: relative;
     background-color: #ffffff;
-    padding: 2rem 20% 4rem;
+    padding: 2rem 20% 3rem;
     text-align: left;
     z-index: 2;
 }
@@ -209,7 +186,7 @@
     flex: 1 1 250px;
     background-color: #ffffff;
     border-radius: 1rem;
-    padding: 2rem 1.5rem;
+    padding: 2.5rem 1.9rem 2rem;
     flex-direction: column;
     align-items: center;
     text-align: center;
@@ -233,22 +210,19 @@
 
 .card-icon {
     font-size: 2.5rem;
-    margin-bottom: 1rem;
+    margin-bottom: .5rem;
 }
 
-/* Título */
 .card-title {
-    font-size: 1.3rem;
+    font-size: 22px;
     font-weight: 600;
-    margin-bottom: 1rem;
+    margin-bottom: .5rem;
     color: var(--oscuro);
 }
-
 
 .card-text {
-    font-size: 1rem;
-    color: var(--oscuro);
-    margin-bottom: 2rem;
+    font-size: 16px;
+    color: var(--texto);
 }
 
 .card-orange .card-icon,
@@ -300,20 +274,11 @@
 
 @media (max-width: 768px) {
     .hero-wrapper {
-        padding: 0 2.5rem;
+        padding: 0 1.8rem;
     }
     .hero-section {
         height: 60vh;
-        padding-top: 5rem;
-    }
-    .hero-content h2.hero-subtitle {
-        font-size: 29px;
-        font-weight: 500;
-    }
-    .hero-content p.hero-text {
-        padding: 0 1.7rem;
-        font-size: 1.2rem;
-        line-height: 1.4;
+        padding: 13rem 0 30rem;
     }
     .intro-section {
         padding: 3rem 5% 3rem;
@@ -324,12 +289,16 @@
     }  
     .card {
         border-radius: 1rem;
-        padding: 1rem 1.5rem;
+        padding: 1rem 1.9em;
         margin: 0 2rem;
-        height: 265px;
+        height: 240px;
     }
+    .card-title{
+        font-size: 20px;
+    }
+
     .card-text {
-        margin-bottom: .5rem;
+        font-size: 15px;
     }
 
     @keyframes fadeUp {
@@ -346,67 +315,23 @@
     .cards-container .card:nth-child(2),
     .cards-container .card:nth-child(3) {
     opacity: 0;
-    animation: fadeUp .9s ease-out forwards;
+    animation: fadeUp 1s ease-out forwards .05s;
     }
 }
 
 /**************************** GALERIA ****************************/
 
-.galeria-title,
-.nosotros-title {
-    position: relative;
-    display: inline-block;
-    text-align: center;
-    font-size: 45px;
-    font-weight: bold;
-    margin-bottom: 70px;
-    padding-top: 30px;
-}
-
-.disciplinas-title,
-.contacto-title {
-    position: relative;
-    display: inline-block;
-    text-align: center;
-    font-size: 45px;
-    font-weight: bold;
-    margin-bottom: 70px;
-    padding-top: 20px; 
-}
-
-.galeria-title::after,
-.nosotros-title::after,
-.disciplinas-title::after,
-.contacto-title::after {
-    content: "";
-    position: absolute;
-    left: 50%;
-    bottom: -10px;
-    transform: translateX(-50%);
-    width: 90px;
-    height: 5px;
-    background-color: var(--naranja);
-    border-radius: 2px;
-}
-
-@media (max-width: 768px) {
-    .galeria-title,
-    .nosotros-title,
-    .disciplinas-title,
-    .contacto-title {
-        font-size: 2rem;
-        margin-bottom: 60px;
-        padding-top: 25px;
-    }
-}
-
 @keyframes fadeIn {
-  from { opacity: 0; transform: scale(0.9); }
-  to { opacity: 1; transform: scale(1); }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .animate-fadeIn {
-  animation: fadeIn 0.3s ease-in-out;
+  animation: fadeIn 0.6s ease-in-out;
 }
 
 @keyframes fadeInUp {

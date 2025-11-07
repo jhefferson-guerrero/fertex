@@ -76,15 +76,20 @@ function Disciplina() {
   };
 
   return (
-    <div className="w-full bg-[#f8f8f8]">
-      <section id="disciplina" className="max-w-[1250px] mx-auto px-4 pb-15 text-(--oscuro)">
-        <h2 className="disciplinas-title">DISCIPLINAS</h2>
+    <div className="w-full bg-(--oscuro)">
+      <section id="disciplina" className="max-w-[1250px] mx-auto px-4 pb-20 md:pb-25 pt-8 text-white">
+        <h2 className="relative inline-block pt-[30px] mb-[35px] md:pt-[50px] md:mb-[45px] text-[2rem] md:text-[45px] font-semibold after:content-[''] after:absolute after:left-1/2 after:-translate-x-1/2 after:bottom-[-10px] after:w-[90px] after:h-[5px] after:bg-(--naranja) after:rounded-sm">Disciplinas</h2>
+        <p class="text-base text-(--blanco) text-justify md:text-lg font-normal leading-7 mb-10 md:px-3">
+          En FERTEX ofrecemos tres disciplinas de artes marciales, 
+          cada una diseñada para desarrollar fuerza, disciplina y 
+          confianza en personas de todas las edades.
+        </p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
           {disciplinas.map((disciplina, index) => (
             <div 
               key={index}
               ref={el => cardRefs.current[index] = el}
-              className={`relative rounded-xl shadow-2xl overflow-hidden group cursor-pointer h-[420px] md:h-[470px] mx-auto w-90 max-w-[350px] md:max-w-none transition-all duration-1000 ease-out ${getAnimationClasses(index, visibleCards[index])}`}
+              className={`relative rounded-2xl shadow-2xl overflow-hidden group cursor-pointer h-[420px] md:h-[470px] md:w-90 mx-auto w-90 max-w-[350px] md:max-w-none transition-all duration-1000 ease-out ${getAnimationClasses(index, visibleCards[index])}`}
             >
               <img 
                 src={disciplina.imagen} 
@@ -92,16 +97,16 @@ function Disciplina() {
                 className='w-full h-full object-cover transition-all duration-500 group-hover:scale-110 group-hover:brightness-75'
               />
               
-              <div className="absolute inset-0 bg-linear-to-t from-black/70 via-black/40 to-transparent lg:from-black/60 lg:via-black/40"></div>
+              <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/40 to-transparent lg:from-black/70 lg:via-black/30"></div>
               
               <div className="absolute inset-0 flex flex-col justify-end p-6 md:p-8">
-                <h3 className="text-white text-3xl md:text-4xl font-bold mb-3 transition-all duration-300 group-hover:mb-4">
+                <h3 className="text-white text-3xl md:text-4xl font-semibold mb-3 transition-all duration-300 group-hover:mb-4">
                   {disciplina.nombre}
                 </h3>
                 
                 <div className="rounded-xl w-16 h-1 bg-(--naranja) mb-4 transition-all duration-300 group-hover:w-24"></div>
                 
-                <p className="text-white/90 text-base md:text-base leading-6 md:max-h-0 md:opacity-0 md:group-hover:max-h-40 md:group-hover:opacity-100 transition-all duration-500 overflow-hidden max-h-40 opacity-100">
+                <p className="text-white/90 text-base font-normal md:font-light md:text-base leading-6 md:max-h-0 md:opacity-0 md:group-hover:max-h-40 md:group-hover:opacity-100 transition-all duration-500 overflow-hidden max-h-40 opacity-100">
                   {disciplina.descripcion}
                 </p>
               </div>

@@ -8,6 +8,7 @@
   background-color: #ffffff;
   color: var(--oscuro);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  animation: slideDown 0.8s ease-out;
 }
 
 .header-container {
@@ -20,9 +21,20 @@
   padding: 0 2rem; 
 }
 
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
 .site-logo {
     font-size: 2.8rem;
-    font-weight: bold;
+    font-weight: 600;
 }
 
 .nav-links {
@@ -43,7 +55,7 @@
     color: var(--oscuro);
     text-decoration: none;
     transition: color 0.3s ease;
-    font-weight: 600;
+    font-weight: 500;
     font-size: 1.3rem;
     position: relative;
 }
@@ -98,7 +110,7 @@
 transform: scale(1.1);
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1300px) {
     .menu-btn {
         display: block;
         background: none;
@@ -196,7 +208,7 @@ transform: scale(1.1);
 
 .header-button {
   height: 48px;
-  width: 157px;
+  width: 175px;
   position: relative;
   background-color: transparent;
   cursor: pointer;
@@ -209,7 +221,7 @@ transform: scale(1.1);
 
 .header-btn-txt {
   z-index: 1;
-  font-weight: 600;
+  font-weight: 500;
   font-size: 19px;
   line-height: 2.4;
 }

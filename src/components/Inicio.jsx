@@ -5,16 +5,15 @@ import { faHandshake, faCrown, faHandHoldingHeart } from '@fortawesome/free-soli
 function Inicio() {
   return (
     <div id="inicio" className="start-container">
-
-      {/* Hero con imagen */}
+      
       <div className="hero-section">
         <div className="hero-wrapper">
           <div className="hero-content">
-            <h2 className="hero-subtitle">ARTES MARCIALES</h2>
+            <h2 className="mt-8 text-[29px] md:text-[2.3rem] font-medium leading-none text-(--naranja) animate-fadeIn">ARTES MARCIALES</h2>
             <div class="animate title">
               <span>F</span><span>E</span><span>R</span><span>T</span><span>E</span><span>X</span>
             </div>
-            <p className="hero-text">TaekwondoFertex - Escuela de artes marciales con 20 años de experiencia. Enseñanza y difusión del Taekwondo ITF, Muay Thai, Capoeira y Preparación Física.</p>
+            <p className="text-[17px] leading-7.5 mx-8 font-normal mt-5 md:text-xl md:leading-8 md:mx-0 animate-fadeIn">Escuela de artes marciales con 20 años de experiencia. Enseñanza y difusión del Taekwondo ITF, Muay Thai, Capoeira y Preparación Física.</p>
           </div>
         </div>
       </div>
@@ -26,14 +25,14 @@ function Inicio() {
           <div className="card card-orange transform transition duration-300 hover:scale-102">
             <div className="card-icon"><FontAwesomeIcon icon={faHandshake} /></div>
             <h3 className="card-title">Disciplina y respeto</h3>
-            <p className="card-text">Enseñamos valores fundamentales que trascienden el ámbito deportivo, ayudando a formar mejores personas.</p>
+            <p className="card-text">Formamos valores sólidos que fortalecen el carácter y trascienden el deporte.</p>
           </div>
 
           {/* Card 2 */}
           <div className="card card-yellow transform transition duration-300 hover:scale-102">
             <div className="card-icon"><FontAwesomeIcon icon={faCrown} /></div>
             <h3 className="card-title">Entrenamiento de calidad</h3>
-            <p className="card-text">Contamos con instructores altamente calificados para brindarte mejor experiencia.</p>
+            <p className="card-text">Contamos con instructores altamente calificados.</p>
           </div>
 
           {/* Card 3 */}
