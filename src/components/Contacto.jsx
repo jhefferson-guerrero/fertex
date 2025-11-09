@@ -86,10 +86,10 @@ function Contacto() {
   }, []);
 
   return (
-    <div className="w-full bg-white">
+    <div className="w-full bg-(--blanco) rounded-t-[60px] md:rounded-t-[90px]">
       <section id="contacto" className="max-w-[1425px] mx-auto px-4 pt-1 py-4 pb-24 text-(--oscuro)">
         
-        <h2 className="relative inline-block pt-[30px] mb-[50px] md:pt-[50px] md:mb-[60px] text-[2rem] md:text-[45px] font-semibold after:content-[''] after:absolute after:left-1/2 after:-translate-x-1/2 after:bottom-[-10px] after:w-[90px] after:h-[5px] after:bg-(--naranja) after:rounded-sm">Nuestros Locales</h2>
+        <h2 className="relative inline-block pt-[60px] mb-[50px] md:pt-[60px] md:mb-[60px] text-[2rem] md:text-[45px] font-semibold after:content-[''] after:absolute after:left-1/2 after:-translate-x-1/2 after:-bottom-2.5 after:w-[90px] after:h-[5px] after:bg-(--naranja) after:rounded-sm">Nuestros Locales</h2>
 
         {/* Primera sección */}
         <div className="flex flex-wrap justify-center items-center gap-8 lg:gap-20">

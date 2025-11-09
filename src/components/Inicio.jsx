@@ -9,7 +9,7 @@ function Inicio() {
       <div className="hero-section">
         <div className="hero-wrapper">
           <div className="hero-content">
-            <h2 className="mt-8 text-[29px] md:text-[2.3rem] font-medium leading-none text-(--naranja) animate-fadeIn">ARTES MARCIALES</h2>
+            <h2 className="mt-8 text-[29px] md:text-[2.3rem] font-medium tracking-wide leading-none text-(--naranja) animate-fadeIn">ARTES MARCIALES</h2>
             <div class="animate title">
               <span>F</span><span>E</span><span>R</span><span>T</span><span>E</span><span>X</span>
             </div>

@@ -4,6 +4,7 @@ import '../styles/Content.css';
 function Galeria() {
   const [selectedImg, setSelectedImg] = useState(null);
   const gridRef = useRef(null);
+  const paragraphRef = useRef(null);
 
   const images = [
     { src: "/images/fertex-taekwondo-competencia-01.webp", alt: "Competencia de Taekwondo ITF Fertex" },
@@ -41,11 +42,32 @@ function Galeria() {
     return () => io.disconnect();
   }, []);
 
+  useEffect(() => {
+    if (!paragraphRef.current) return;
+
+    const io = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("animate-fadeInUp");
+          entry.target.classList.remove("opacity-0");
+          io.unobserve(entry.target);
+        }
+      },
+      { threshold: 0.2 }
+    );
+
+    io.observe(paragraphRef.current);
+    return () => io.disconnect();
+  }, []);
+
   return (
-    <div className="w-full bg-white -z-20 rounded-t-[70px] md:rounded-t-[90px]">
-      <section id="galeria" className="max-w-[1425px] mx-auto px-4 pt-5 pb-12 text-(--oscuro)">
-        <h2 className="relative inline-block pt-[30px] mb-[35px] md:pt-[50px] md:mb-[45px] text-[2rem] md:text-[45px] font-semibold after:content-[''] after:absolute after:left-1/2 after:-translate-x-1/2 after:bottom-[-10px] after:w-[90px] after:h-[5px] after:bg-(--naranja) after:rounded-sm">Galería</h2>
-        <p class="text-base text-(--texto) text-justify md:text-lg font-normal leading-7 mb-10">
+    <div className="w-full bg-(--oscuro) -z-20 rounded-t-[50px] md:rounded-t-[90px]">
+      <section id="galeria" className="max-w-[1425px] mx-auto px-4 pt-5 pb-20 md:pb-25 text-(--blanco)">
+        <h2 className="relative inline-block pt-[35px] mb-[35px] md:pt-[50px] md:mb-[45px] text-[2rem] md:text-[45px] font-semibold after:content-[''] after:absolute after:left-1/2 after:-translate-x-1/2 after:-bottom-2.5 after:w-[90px] after:h-[5px] after:bg-(--naranja) after:rounded-sm">Galería</h2>
+        <p 
+          ref={paragraphRef}
+          className="text-base md:text-lg text-(--blanco) mb-10 md:mb-15 leading-relaxed max-w-4xl mx-auto opacity-0"
+        >
           Cada imagen cuenta una historia de superación y disciplina. Revive con 
           nosotros los momentos más memorables de estudiantes, instructores y 
           campeones de la familia FERTEX.

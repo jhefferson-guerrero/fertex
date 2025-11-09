@@ -3,6 +3,14 @@ import { useEffect, useRef, useState } from 'react';
 function Disciplina() {
   const [visibleCards, setVisibleCards] = useState([false, false, false]);
   const cardRefs = useRef([]);
+  const [visibleParagraph1, setVisibleParagraph1] = useState(false);
+  const [visibleParagraph2, setVisibleParagraph2] = useState(false);
+  const [visibleParagraph3, setVisibleParagraph3] = useState(false);
+  const [visibleInstructors, setVisibleInstructors] = useState([]);
+  const paragraph1Ref = useRef(null);
+  const paragraph2Ref = useRef(null);
+  const paragraph3Ref = useRef(null);
+  const instructorRefs = useRef([]);
 
   useEffect(() => {
     const observers = cardRefs.current.map((cardRef, index) => {
@@ -33,6 +41,101 @@ function Disciplina() {
       observers.forEach((observer, index) => {
         if (cardRefs.current[index]) {
           observer.unobserve(cardRefs.current[index]);
+        }
+      });
+    };
+  }, []);
+
+  useEffect(() => {
+    const observer1 = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setVisibleParagraph1(true);
+        }
+      },
+      { threshold: 0.2 }
+    );
+
+    if (paragraph1Ref.current) {
+      observer1.observe(paragraph1Ref.current);
+    }
+
+    return () => {
+      if (paragraph1Ref.current) {
+        observer1.unobserve(paragraph1Ref.current);
+      }
+    };
+  }, []);
+
+  useEffect(() => {
+    const observer2 = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setVisibleParagraph2(true);
+        }
+      },
+      { threshold: 0.2 }
+    );
+
+    if (paragraph2Ref.current) {
+      observer2.observe(paragraph2Ref.current);
+    }
+
+    return () => {
+      if (paragraph2Ref.current) {
+        observer2.unobserve(paragraph2Ref.current);
+      }
+    };
+  }, []);
+
+  useEffect(() => {
+    const observer3 = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setVisibleParagraph3(true);
+        }
+      },
+      { threshold: 0.2 }
+    );
+
+    if (paragraph3Ref.current) {
+      observer3.observe(paragraph3Ref.current);
+    }
+
+    return () => {
+      if (paragraph3Ref.current) {
+        observer3.unobserve(paragraph3Ref.current);
+      }
+    };
+  }, []);
+
+  useEffect(() => {
+    const observers = instructorRefs.current.map((instructorRef, index) => {
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            setVisibleInstructors(prev => {
+              if (!prev.includes(index)) {
+                return [...prev, index];
+              }
+              return prev;
+            });
+          }
+        },
+        { threshold: 0.2 }
+      );
+
+      if (instructorRef) {
+        observer.observe(instructorRef);
+      }
+
+      return observer;
+    });
+
+    return () => {
+      observers.forEach((observer, index) => {
+        if (instructorRefs.current[index]) {
+          observer.unobserve(instructorRefs.current[index]);
         }
       });
     };
@@ -75,11 +178,61 @@ function Disciplina() {
     return animations[index];
   };
 
+
+  const [hoveredCard, setHoveredCard] = useState(null);
+  const instructores = [
+    {
+      id: 1,
+      nombre: "Paco Orizano",
+      cargo: "INSTRUCTOR INTERNACIONAL",
+      imagen: "/images/instructor-muaythai.webp",
+    },
+    {
+      id: 2,
+      nombre: "Tomas Luna",
+      cargo: "CINTA NEGRA",
+      imagen: "/images/instructor-taekwondo-01.webp",
+    },
+    {
+      id: 3,
+      nombre: "Edson Suarez",
+      cargo: "INSTRUCTOR",
+      imagen: "/images/instructor-capoeira.webp",
+    },
+    {
+      id: 4,
+      nombre: "Rangel Berjarano",
+      cargo: "CINTA NEGRA",
+      imagen: "/images/instructor-capoeira.webp",
+    },
+    {
+      id: 5,
+      nombre: "Gian Piere Diaz",
+      cargo: "INSTRUCTOR",
+      imagen: "/images/instructor-muaythai.webp",
+    },
+    {
+      id: 6,
+      nombre: "Matias",
+      cargo: "INSTRUCTOR",
+      imagen: "/images/instructor-capoeira.webp",
+    }
+  ];
+
   return (
-    <div className="w-full bg-(--oscuro)">
+    <div className="w-full bg-[(--oscuro)]">
       <section id="disciplina" className="max-w-[1250px] mx-auto px-4 pb-20 md:pb-25 pt-8 text-white">
-        <h2 className="relative inline-block pt-[30px] mb-[35px] md:pt-[50px] md:mb-[45px] text-[2rem] md:text-[45px] font-semibold after:content-[''] after:absolute after:left-1/2 after:-translate-x-1/2 after:bottom-[-10px] after:w-[90px] after:h-[5px] after:bg-(--naranja) after:rounded-sm">Disciplinas</h2>
-        <p class="text-base text-(--blanco) text-justify md:text-lg font-normal leading-7 mb-10 md:px-3">
+        <h2 className="relative inline-block pt-[30px] mb-[35px] md:pt-[50px] md:mb-[45px] text-[2rem] md:text-[45px] font-semibold after:content-[''] after:absolute after:left-1/2 after:-translate-x-1/2 after:-bottom-2.5 after:w-[90px] after:h-[5px] after:bg-(--naranja) after:rounded-sm">
+          Disciplinas
+        </h2>
+        <p 
+          ref={paragraph1Ref}
+          className={`text-base md:text-lg text-(--blanco) mb-10 md:mb-15 leading-relaxed max-w-4xl mx-auto transition-all duration-1000 ease-out ${
+            visibleParagraph1 
+              ? 'opacity-100 translate-y-0' 
+              : 'opacity-0 translate-y-[30px]'
+          }`}
+        >
           En FERTEX ofrecemos tres disciplinas de artes marciales, 
           cada una diseñada para desarrollar fuerza, disciplina y 
           confianza en personas de todas las edades.
@@ -114,6 +267,100 @@ function Disciplina() {
           ))}
         </div>
       </section>
+
+
+
+      {/* Instructores */}
+      <div className="w-full bg-white rounded-t-[60px] rounded-b-[60px] md:rounded-t-[90px] md:rounded-b-[90px]">
+        <section id="instructores" className="max-w-[1250px] mx-auto px-4 pb-16 md:pb-25 pt-8 text-(--oscuro)">
+          
+          <div className="text-center mb-10 md:mb-15">
+            <p className="text-(--naranja) font-semibold md:text-2xl text-gl uppercase tracking-widest pt-12 md:pt-15">
+              Nuestros Instructores
+            </p>
+            
+            <h2 className="relative inline-block mb-[45px] pt-0 md:mb-[55px] text-[2rem] md:text-[45px] font-semibold after:content-[''] after:absolute after:left-1/2 after:-translate-x-1/2 md:after:-bottom-2.5 after:-bottom-4 after:w-[90px] after:h-[5px] after:bg-(--naranja) after:rounded-sm">
+              Conoce a Nuestro Equipo
+            </h2>
+
+            <p 
+              ref={paragraph2Ref}
+              className={`text-base md:text-lg text-(--texto) leading-relaxed max-w-4xl mx-auto transition-all duration-1000 ease-out ${
+                visibleParagraph2 
+                  ? 'opacity-100 translate-y-0' 
+                  : 'opacity-0 translate-y-[30px]'
+              }`}
+            >
+              Profesionales certificados con más de 20 años de experiencia formando 
+              campeones y transmitiendo valores fundamentales a través de las artes marciales.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+            {instructores.map((instructor, index) => (
+              <div
+                key={instructor.id}
+                ref={el => instructorRefs.current[index] = el}
+                className={`group cursor-pointer h-[420px] md:h-[470px] md:w-90 mx-auto w-90 max-w-[350px] md:max-w-none relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-1000 ease-out ${
+                  visibleInstructors.includes(index)
+                    ? 'opacity-100 translate-y-0'
+                    : 'opacity-0 translate-y-[50px]'
+                }`}
+                onMouseEnter={() => setHoveredCard(instructor.id)}
+                onMouseLeave={() => setHoveredCard(null)}
+              >
+                {/* Imagen */}
+                <div className="relative aspect-3/4 overflow-hidden">
+                  <img 
+                    src={instructor.imagen} 
+                    alt={instructor.nombre}
+                    className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+                  />
+                  
+                  <div className="absolute inset-0 bg-linear-to-t from-black/70 via-black/30 to-transparent opacity-90 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  
+                </div>
+
+                <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-0 group-hover:-translate-y-2 transition-transform duration-300">
+                  <h3 className="text-xl md:text-2xl font-semibold mb-1 tracking-tight">
+                    {instructor.nombre}
+                  </h3>
+                  <p className="text-(--naranja) font-semibold text-sm md:text-base uppercase tracking-wide">
+                    {instructor.cargo}
+                  </p>
+                  
+                  <div 
+                    className={`rounded-xl w-0 h-1 bg-(--naranja) mt-3 transition-all duration-500 ${
+                      hoveredCard === instructor.id ? 'w-20' : 'w-0'
+                    }`}
+                  ></div>
+                </div>
+
+                <div className="absolute inset-0 bg-linear-to-r from-transparent via-white/10 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+              </div>
+            ))}
+          </div>
+
+          <div 
+              ref={paragraph3Ref}
+              className={`text-center mt-12 md:mt-16 transition-all duration-1000 ease-out ${
+                visibleParagraph3 
+                  ? 'opacity-100 translate-y-0' 
+                  : 'opacity-0 translate-y-[30px]'
+              }`}
+          >
+            <p className="text-(--texto) text-base md:text-lg mb-6">
+              ¿Quieres formar parte de nuestro equipo de campeones?
+            </p>
+            <a 
+              href="#contacto" 
+              className="inline-block bg-(--naranja) hover:bg-(--naranja) text-white font-bold py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-101 hover:shadow-lg"
+            >
+              Agenda tu Clase de Prueba
+            </a>
+          </div>
+        </section>
+      </div>
     </div>
   );
 }

@@ -51,8 +51,8 @@ function Nosotros() {
   }, []);
   
   return (
-    <div className="w-full bg-white rounded-b-[70px] md:rounded-b-[90px]">
-      <section id="nosotros" className="max-w-[1425px] mx-auto px-4 pt-5 pb-10 lg:pb-25 text-(--oscuro)">
+    <div className="w-full bg-white rounded-b-[60px] md:rounded-b-[90px]">
+      <section id="nosotros" className="max-w-[1425px] mx-auto px-4 pt-5 pb-12 lg:pb-25 text-(--oscuro)">
 
         <h2 className="relative inline-block pt-[30px] mb-[45px] md:pt-[50px] md:mb-[70px] text-[2rem] md:text-[45px] font-semibold after:content-[''] after:absolute after:left-1/2 after:-translate-x-1/2 after:bottom-[-10px] after:w-[90px] after:h-[5px] after:bg-(--naranja) after:rounded-sm">Sobre Nosotros</h2>
 
