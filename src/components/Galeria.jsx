@@ -81,6 +81,7 @@ function Galeria() {
               className="mb-1 rounded-xl cursor-pointer transform transition duration-300 hover:scale-98 opacity-0 md:mb-2"
               src={img.src}
               alt={img.alt}
+              loading="lazy" 
               onClick={() => {
                 setSelectedImg(img.src);
                 document.body.style.overflow = "hidden";

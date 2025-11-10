@@ -246,6 +246,7 @@ function Disciplina() {
             >
               <img 
                 src={disciplina.imagen} 
+                loading="lazy"
                 alt={`Práctica de ${disciplina.nombre}`} 
                 className='w-full h-full object-cover transition-all duration-500 group-hover:scale-110 group-hover:brightness-75'
               />
@@ -314,6 +315,7 @@ function Disciplina() {
                   <img 
                     src={instructor.imagen} 
                     alt={instructor.nombre}
+                    loading="lazy"
                     className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
                   />
                   
