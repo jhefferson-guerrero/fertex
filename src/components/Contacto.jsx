@@ -116,8 +116,7 @@ function Contacto() {
                     Dirección:
                   </strong>
                   <p className="text-base text-(--texto) md:text-lg">
-                    Av. El Muro Mz 9 lote 18, Mariscal Cáceres, San Juan de
-                    Lurigancho
+                    Cruce con, Av. Central 5110, Av. El Muro Urb, San Juan de Lurigancho 15412
                   </p>
                 </div>
               </div>
@@ -169,7 +168,7 @@ function Contacto() {
                   </strong>
                   <div className="flex gap-4 mt-2">
                     <a
-                      href="https://www.facebook.com/FertexGukGi"
+                      href="https://www.facebook.com/profile.php?id=100066575439955"
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label="Visitar página de Facebook de Fertex - Mariscal Cáceres"
@@ -301,7 +300,7 @@ function Contacto() {
                   </strong>
                   <div className="flex gap-4 mt-2">
                     <a
-                      href="https://www.facebook.com/FertexGukGi"
+                      href="https://www.facebook.com/FertexVillaFloress/"
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label="Visitar página de Facebook de Fertex - Villa Flores"
@@ -314,7 +313,7 @@ function Contacto() {
                       />
                     </a>
                     <a
-                      href="https://www.instagram.com/fertexartesmarciales/"
+                      href="https://www.instagram.com/fertexvillaflores/"
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label="Visitar página de Instragram de Fertex - Villa Flores"

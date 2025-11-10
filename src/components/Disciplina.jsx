@@ -355,7 +355,8 @@ function Disciplina() {
               ¿Quieres formar parte de nuestro equipo de campeones?
             </p>
             <a 
-              href="#contacto" 
+              href="https://api.whatsapp.com/send/?phone=51944351592&text=Hola%2C+me+gustar%C3%ADa+recibir+m%C3%A1s+informaci%C3%B3n.&type=phone_number&app_absent=0"
+              target="_blank" 
               className="inline-block bg-(--naranja) hover:bg-(--naranja) text-white font-bold py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-101 hover:shadow-lg"
             >
               Agenda tu Clase de Prueba
