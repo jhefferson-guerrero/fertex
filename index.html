@@ -18,7 +18,12 @@
       type="font/ttf"
       crossorigin
     />
-    <link rel="preload" as="image" href="/images/fondo-inicio.webp" />
+    <link
+      rel="preload"
+      as="image"
+      href="/images/fondo-inicio.webp"
+      fetchpriority="high"
+    />
     <link
       rel="preload"
       href="/fonts/Poppins/Poppins-Medium.ttf"
@@ -36,7 +41,67 @@
     <title>Fertex - Artes Marciales</title>
   </head>
   <body>
+    <style>
+      #loading-skeleton {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: #1a1a1a;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+        transition: opacity 0.3s ease-out;
+      }
+      @media (min-width: 768px) {
+        #loading-skeleton {
+          display: none !important;
+        }
+      }
+      #loading-skeleton.loaded {
+        opacity: 0;
+        pointer-events: none;
+      }
+      .spinner {
+        width: 50px;
+        height: 50px;
+        border: 4px solid rgba(255, 107, 53, 0.3);
+        border-top-color: #ff6b35;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+      }
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+    <div id="loading-skeleton">
+      <div class="spinner"></div>
+    </div>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
+    <script>
+      const isMobile =
+        /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+          navigator.userAgent
+        ) || window.innerWidth < 768;
+      if (isMobile) {
+        window.addEventListener("load", () => {
+          setTimeout(() => {
+            document
+              .getElementById("loading-skeleton")
+              ?.classList.add("loaded");
+            setTimeout(() => {
+              document.getElementById("loading-skeleton")?.remove();
+            }, 300);
+          }, 100);
+        });
+      } else {
+        document.getElementById("loading-skeleton")?.remove();
+      }
+    </script>
   </body>
 </html>

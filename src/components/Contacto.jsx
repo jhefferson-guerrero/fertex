@@ -172,21 +172,26 @@ function Contacto() {
                       href="https://www.facebook.com/FertexGukGi"
                       target="_blank"
                       rel="noopener noreferrer"
+                      aria-label="Visitar página de Facebook de Fertex - Mariscal Cáceres"
                       className="text-(--oscuro) hover:transition-all duration-200 hover:scale-110"
                     >
                       <FontAwesomeIcon 
                       icon={faFacebook} 
-                      className="text-3xl" />
+                      className="text-3xl" 
+                      aria-hidden="true"
+                      />
                     </a>
                     <a
                       href="https://www.instagram.com/fertexartesmarciales/"
                       target="_blank"
                       rel="noopener noreferrer"
+                      aria-label="Visitar página de Instagram de Fertex - Mariscal Cáceres"
                       className="text-(--oscuro) hover:transition-all duration-200 hover:scale-110"
                     >
                       <FontAwesomeIcon
                         icon={faInstagram}
                         className="text-3xl"
+                        aria-hidden="true"
                       />
                     </a>
                   </div>
@@ -299,21 +304,26 @@ function Contacto() {
                       href="https://www.facebook.com/FertexGukGi"
                       target="_blank"
                       rel="noopener noreferrer"
+                      aria-label="Visitar página de Facebook de Fertex - Villa Flores"
                       className="text-(--oscuro) hover:transition-all duration-200 hover:scale-110"
                     >
                       <FontAwesomeIcon 
                       icon={faFacebook} 
-                      className="text-3xl" />
+                      className="text-3xl"
+                      aria-hidden="true" 
+                      />
                     </a>
                     <a
                       href="https://www.instagram.com/fertexartesmarciales/"
                       target="_blank"
                       rel="noopener noreferrer"
+                      aria-label="Visitar página de Instragram de Fertex - Villa Flores"
                       className="text-(--oscuro) hover:transition-all duration-200 hover:scale-110"
                     >
                       <FontAwesomeIcon
                         icon={faInstagram}
                         className="text-3xl"
+                        aria-hidden="true"
                       />
                     </a>
                   </div>

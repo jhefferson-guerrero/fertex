@@ -36,11 +36,11 @@ function Footer() {
           <div className="footer-social">
             <h3>Síguenos</h3>
             <div className="social-icons">
-              <a href="https://www.facebook.com/FertexGukGi" target="_blank" rel="noopener noreferrer">
-                <FontAwesomeIcon icon={faFacebook} />
+              <a href="https://www.facebook.com/FertexGukGi" target="_blank" rel="noopener noreferrer" aria-label="Visitar página de Facebook de Fertex - Villa Flores">
+                <FontAwesomeIcon icon={faFacebook} aria-hidden="true" />
               </a>
-              <a href="https://www.instagram.com/fertexartesmarciales/" target="_blank" rel="noopener noreferrer">
-                <FontAwesomeIcon icon={faInstagram} />
+              <a href="https://www.instagram.com/fertexartesmarciales/" target="_blank" rel="noopener noreferrer" aria-label="Visitar página de Instragram de Fertex - Villa Flores">
+                <FontAwesomeIcon icon={faInstagram} aria-hidden="true" />
               </a>
             </div>
           </div>

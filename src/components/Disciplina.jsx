@@ -275,7 +275,7 @@ function Disciplina() {
         <section id="instructores" className="max-w-[1250px] mx-auto px-4 pb-16 md:pb-25 pt-8 text-(--oscuro)">
           
           <div className="text-center mb-10 md:mb-15">
-            <p className="text-(--naranja) font-semibold md:text-2xl text-gl uppercase tracking-widest pt-12 md:pt-15">
+            <p className="text-(--naranja) font-semibold md:text-2xl text-lg uppercase tracking-widest pt-12 md:pt-15">
               Nuestros Instructores
             </p>
             
@@ -322,10 +322,10 @@ function Disciplina() {
                 </div>
 
                 <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-0 group-hover:-translate-y-2 transition-transform duration-300">
-                  <h3 className="text-xl md:text-2xl font-semibold mb-1 tracking-tight">
+                  <h3 className="text-2xl font-semibold mb-1 tracking-tight">
                     {instructor.nombre}
                   </h3>
-                  <p className="text-(--naranja) font-semibold text-sm md:text-base uppercase tracking-wide">
+                  <p className="text-(--naranja) font-semibold text-base uppercase tracking-wide">
                     {instructor.cargo}
                   </p>
                   
