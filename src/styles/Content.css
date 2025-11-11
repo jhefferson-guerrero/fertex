@@ -200,11 +200,11 @@
 }
 
 .card-yellow {
-    border-bottom-color: #FFD700;
+    border-bottom-color: #FBC62C;
 }
 
 .card-red {
-    border-bottom-color: #e72929;
+    border-bottom-color: #E11605;
 }
 
 
@@ -232,12 +232,12 @@
 
 .card-yellow .card-icon,
 .card-yellow{
-    color: #FFD700;
+    color: #FBC62C;
 }
 
 .card-red .card-icon,
 .card-red {
-    color: #e72929;
+    color: #E11605;
 }
 
 @media (min-width: 930px) {
