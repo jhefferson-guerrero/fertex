@@ -1,16 +1,64 @@
-# React + Vite
+# FERTEX – Sitio Web Oficial  
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![React](https://img.shields.io/badge/React-18.x-61DAFB?logo=react&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-5.x-646CFF?logo=vite&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind-4.x-38B2AC?logo=tailwind-css&logoColor=white)
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Landing page moderna y responsiva para una academia de artes marciales con más de 20 años de trayectoria.  
+Desarrollada con **React + Vite**, enfocada en rendimiento, diseño mobile-first y experiencia de usuario.
+## Vista previa del sitio 
+![Vista previa de Inicio](public/screen/inicio.png)
+🌐 **Sitio en producción:** https://taekwondofertex.com/  
+📦 **Repositorio:** https://github.com/Novita17x/fertex.git
 
-## React Compiler
+## Tecnologías utilizadas
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+| Tecnología | Propósito |
+|------------|-----------|
+| **React 18** | Biblioteca principal para componentes UI |
+| **Vite** | Build tool moderno para desarrollo rápido |
+| **Tailwind CSS** | Framework utility-first para estilos |
+| **Intersection Observer API** | Animaciones progresivas según scroll |
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Objetivo del proyecto
+Este proyecto surge de la necesidad de digitalizar la presencia de la academia FERTEX, permitiendo que familias y potenciales alumnos encuentren información clara, accesible y disponible 24/7.
+El resultado es una landing page rápida, moderna y completamente optimizada para mejorar la visibilidad y el proceso de captación de nuevos alumnos.
+## Características principales
+### Diseño y experiencia de usuario
+- Diseño mobile-first desde la estructura base.  
+- Secciones limpias y enfocadas en la conversión.  
+- Microinteracciones suaves con Intersection Observer.
+### Performance y optimización
+- Preload de fuentes e imágenes críticas.  
+- Lazy loading para galería y recursos pesados.  
+- Animaciones progresivas según scroll.  
+- Estructura optimizada gracias al entorno Vite.
+### Contenido informativo
+- **Inicio:** Presentación institucional.  
+- **Nosotros:** Historia y valores.  
+- **Disciplinas:** Taekwondo ITF, Muay Thai y Capoeira.
+- **Instructores:** Tarjetas de los instructores.  
+- **Galería:** Fotos reales de clases y eventos.  
+- **Locales:** Información de sedes con mapa integrado.  
+## Instalación y ejecución del proyecto
+### Clona el repositorio:
+```bash
+git clone https://github.com/Novita17x/fertex.git
+```
+
+### Ingresa a la carpeta:
+```bash
+cd fertex
+```
+
+### Instala dependencias:
+```bash
+npm install
+```
+
+### Ejecuta el entorno de desarrollo:
+```bash
+npm run dev
+```
