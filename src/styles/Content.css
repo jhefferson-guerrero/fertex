@@ -7,7 +7,7 @@
     background-position: 85%;
     height: 65vh;
     min-height: 300px;
-    max-height: 600px;
+    max-height: 600px;  
     display: flex;
     align-items: flex-start;
     padding: 12rem 0 31rem;
@@ -26,11 +26,10 @@
 
 @media (min-width: 768px) {
     .hero-section {
-        background-position: right top;  
+        background-position: right top;      
     }
     .hero-section::before {
-    background: rgba(0, 0, 0, 0.15);
-
+    background: rgba(0, 0, 0, 0.226);
     }
 }
 
@@ -204,7 +203,7 @@
 }
 
 .card-red {
-    border-bottom-color: #E11605;
+    border-bottom-color: #0477BF;
 }
 
 
@@ -237,7 +236,7 @@
 
 .card-red .card-icon,
 .card-red {
-    color: #E11605;
+    color: #0477BF;
 }
 
 @media (min-width: 930px) {

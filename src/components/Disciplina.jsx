@@ -185,13 +185,13 @@ function Disciplina() {
       id: 1,
       nombre: "Paco Orizano",
       cargo: "INSTRUCTOR INTERNACIONAL",
-      imagen: "/images/instructor-muaythai.webp",
+      //imagen: "/images/instructor-muaythai.webp",
     },
     {
       id: 2,
-      nombre: "Tomas Luna",
-      cargo: "CINTA NEGRA",
-      imagen: "/images/instructor-taekwondo-01.webp",
+      nombre: "Gian Piere Diaz",
+      cargo: "INSTRUCTOR",
+      imagen: "/images/instructor-muaythai.webp",
     },
     {
       id: 3,
@@ -199,6 +199,7 @@ function Disciplina() {
       cargo: "INSTRUCTOR",
       imagen: "/images/instructor-capoeira.webp",
     },
+    /* 
     {
       id: 4,
       nombre: "Rangel Berjarano",
@@ -207,9 +208,9 @@ function Disciplina() {
     },
     {
       id: 5,
-      nombre: "Gian Piere Diaz",
-      cargo: "INSTRUCTOR",
-      imagen: "/images/instructor-muaythai.webp",
+      nombre: "Tomas Luna",
+      cargo: "CINTA NEGRA",
+      imagen: "/images/instructor-taekwondo-01.webp",
     },
     {
       id: 6,
@@ -217,6 +218,7 @@ function Disciplina() {
       cargo: "INSTRUCTOR",
       imagen: "/images/instructor-capoeira.webp",
     }
+    */
   ];
 
   return (

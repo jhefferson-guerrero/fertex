@@ -1,7 +1,7 @@
 /* Poppins Font Face */
 @font-face {
   font-family: 'Poppins';
-  src: url('/fonts/Poppins/Poppins-Regular.ttf') format('truetype');
+  src: url('/fonts/Poppins/Poppins-Regular.woff2') format('woff2');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -9,7 +9,7 @@
 
 @font-face {
   font-family: 'Poppins';
-  src: url('/fonts/Poppins/Poppins-Medium.ttf') format('truetype');
+  src: url('/fonts/Poppins/Poppins-Medium.woff2') format('woff2');
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -17,7 +17,7 @@
 
 @font-face {
   font-family: 'Poppins';
-  src: url('/fonts/Poppins/Poppins-SemiBold.ttf') format('truetype');
+  src: url('/fonts/Poppins/Poppins-SemiBold.woff2') format('woff2');
   font-weight: 600;
   font-style: normal;
   font-display: swap;
@@ -25,7 +25,7 @@
 
 @font-face {
   font-family: 'Poppins';
-  src: url('/fonts/Poppins/Poppins-Bold.ttf') format('truetype');
+  src: url('/fonts/Poppins/Poppins-Bold.woff2') format('woff2');
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -34,7 +34,7 @@
 /* Saira Stencil One Font Face */
 @font-face {
   font-family: 'Saira Stencil One';
-  src: url('/fonts/SairaStencilOne/SairaStencilOne-Regular.ttf') format('truetype');
+  src: url('/fonts/SairaStencilOne/SairaStencilOne-Regular.woff2') format('woff2');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -65,7 +65,7 @@ html, body {
   --gris-claro: #fcfcfc;
   --gris-medio: #e0e0e0;
   --gris-oscuro: #666666;
-  --naranja: #F7842E;
+  --naranja: #F9221C;
   --texto: #3A3A3A;
 }
 
