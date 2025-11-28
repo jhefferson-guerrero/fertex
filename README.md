@@ -10,7 +10,7 @@ Desarrollada con **React + Vite**, enfocada en rendimiento, diseño mobile-first
 ## Vista previa del sitio 
 ![Vista previa de Inicio](public/screen/inicio.png)
 🌐 **Sitio en producción:** https://taekwondofertex.com/  
-📦 **Repositorio:** https://github.com/Novita17x/fertex.git
+📦 **Repositorio:** https://github.com/jhefferson-guerrero/fertex.git
 
 ## Tecnologías utilizadas
 
@@ -45,7 +45,7 @@ El resultado es una landing page rápida, moderna y completamente optimizada par
 ## Instalación y ejecución del proyecto
 ### Clona el repositorio:
 ```bash
-git clone https://github.com/Novita17x/fertex.git
+git clone https://github.com/jhefferson-guerrero/fertex.git
 ```
 
 ### Ingresa a la carpeta:

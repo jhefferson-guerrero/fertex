@@ -2,30 +2,49 @@
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/logo-fertex.svg" />
+    <!-- Favicon principal -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <!-- Favicon para Apple -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="google-site-verification" content="_S836BogN9WCs-qIbkJJ43LLMDh0Vy3d3zUQ_He0_Lg" />
-    <meta name="description" content="Fertex - Escuela de artes marciales en San Juan de Lurigancho con 20 años de experiencia. Clases de Taekwondo ITF, Muay Thai y Capoeira para niños, jóvenes y adultos. ¡Agenda tu clase de prueba gratis!" />
+    <meta
+      name="google-site-verification"
+      content="_S836BogN9WCs-qIbkJJ43LLMDh0Vy3d3zUQ_He0_Lg"
+    />
+    <meta
+      name="description"
+      content="Escuela de artes marciales en San Juan de Lurigancho con 20 años de experiencia. Clases de Taekwondo ITF, Muay Thai y Capoeira. ¡Agenda tu clase de prueba gratis!"    />
     <!-- Open Graph / Facebook / WhatsApp / LinkedIn -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://taekwondofertex.com" />
     <meta property="og:title" content="Fertex - Artes Marciales" />
-    <meta property="og:description" content="Escuela de artes marciales con 20 años de experiencia. Enseñanza y difusión del Taekwondo ITF, Muay Thai, Capoeira y Preparación Física." />
-    <meta property="og:image" content="https://taekwondofertex.com/og-image-v2.png" />
+    <meta
+      property="og:description"
+      content="Escuela de artes marciales en San Juan de Lurigancho con 20 años de experiencia. Clases de Taekwondo ITF, Muay Thai y Capoeira. ¡Agenda tu clase de prueba gratis!"    />
+    <meta
+      property="og:image"
+      content="https://taekwondofertex.com/og-image-v2.png"
+    />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:site_name" content="Fertex - Artes Marciales" />
-    
+
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:url" content="https://taekwondofertex.com" />
     <meta name="twitter:title" content="Fertex - Artes Marciales" />
-    <meta name="twitter:description" content="Escuela de artes marciales con 20 años de experiencia. Enseñanza y difusión del Taekwondo ITF, Muay Thai, Capoeira y Preparación Física." />
-    <meta name="twitter:image" content="https://taekwondofertex.com/og-image-v2.png" />
-    
+    <meta
+      name="twitter:description"
+      content="Escuela de artes marciales en San Juan de Lurigancho con 20 años de experiencia. Clases de Taekwondo ITF, Muay Thai y Capoeira. ¡Agenda tu clase de prueba gratis!"    />
+    <meta
+      name="twitter:image"
+      content="https://taekwondofertex.com/og-image-v2.png"
+    />
+
     <!-- Canonical URL -->
     <link rel="canonical" href="https://taekwondofertex.com" />
-    
+
     <link
       rel="preload"
       href="/fonts/Poppins/Poppins-Regular.woff2"
@@ -60,7 +79,7 @@
       type="font/woff2"
       crossorigin
     />
-    <title>Fertex - Artes Marciales</title>
+    <title>Fertex | Artes Marciales</title>
   </head>
   <body>
     <style>
@@ -87,17 +106,22 @@
         pointer-events: none;
       }
       .spinner {
-        width: 50px;
-        height: 50px;
-        border: 4px solid rgba(255, 107, 53, 0.3);
-        border-top-color: #ff6b35;
+        width: 55px;
+        height: 55px;
+        border: 4px solid rgba(255, 53, 53, 0.3);
+        border-top-color: #F9221C;
         border-radius: 50%;
         animation: spin 1s linear infinite;
+        animation-play-state: running !important;
       }
       @keyframes spin {
         to {
           transform: rotate(360deg);
         }
+      }
+      body.loading *:not(.spinner) {
+        animation-play-state: paused !important;
+        transition: none !important;
       }
     </style>
     <div id="loading-skeleton">
@@ -110,17 +134,129 @@
         /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
           navigator.userAgent
         ) || window.innerWidth < 768;
+
       if (isMobile) {
-        window.addEventListener("load", () => {
-          setTimeout(() => {
-            document
-              .getElementById("loading-skeleton")
-              ?.classList.add("loaded");
+        // Agregar clase loading al body
+        document.body.classList.add("loading");
+
+        const criticalResources = [
+          "/images/logo-fertex.webp",
+          "/images/fondo-inicio.webp",
+          "/fonts/Poppins/Poppins-Regular.woff2",
+          "/fonts/Poppins/Poppins-SemiBold.woff2",
+          "/fonts/Poppins/Poppins-Medium.woff2",
+          "/fonts/SairaStencilOne/SairaStencilOne-Regular.woff2",
+        ];
+
+        let resourcesLoaded = {
+          dom: false,
+          fonts: false,
+          images: false,
+          react: false,
+        };
+
+        function checkAllResourcesLoaded() {
+          if (
+            resourcesLoaded.dom &&
+            resourcesLoaded.fonts &&
+            resourcesLoaded.images &&
+            resourcesLoaded.react
+          ) {
+            hideLoadingSkeleton();
+          }
+        }
+
+        function hideLoadingSkeleton() {
+          document.body.classList.remove("loading");
+
+          const skeleton = document.getElementById("loading-skeleton");
+          if (skeleton) {
+            skeleton.classList.add("loaded");
             setTimeout(() => {
-              document.getElementById("loading-skeleton")?.remove();
+              skeleton.remove();
             }, 300);
-          }, 100);
+          }
+        }
+
+        if (document.readyState === "loading") {
+          document.addEventListener("DOMContentLoaded", () => {
+            resourcesLoaded.dom = true;
+            checkAllResourcesLoaded();
+          });
+        } else {
+          resourcesLoaded.dom = true;
+        }
+
+        if (document.fonts) {
+          document.fonts.ready.then(() => {
+            resourcesLoaded.fonts = true;
+            checkAllResourcesLoaded();
+          });
+        } else {
+          setTimeout(() => {
+            resourcesLoaded.fonts = true;
+            checkAllResourcesLoaded();
+          }, 1000);
+        }
+
+        function checkCriticalImages() {
+          const logoImage = new Image();
+          logoImage.src = "/images/logo-fertex.webp";
+
+          const heroImage = new Image();
+          heroImage.src = "/images/fondo-inicio.webp";
+
+          let imagesChecked = 0;
+          const totalImages = 2;
+
+          function imageLoaded() {
+            imagesChecked++;
+            if (imagesChecked === totalImages) {
+              resourcesLoaded.images = true;
+              checkAllResourcesLoaded();
+            }
+          }
+
+          // Verificar ambas imágenes webp
+          logoImage.onload = imageLoaded;
+          logoImage.onerror = imageLoaded;
+
+          heroImage.onload = imageLoaded;
+          heroImage.onerror = imageLoaded;
+        }
+
+        const observer = new MutationObserver((mutations) => {
+          const root = document.getElementById("root");
+          if (root && root.children.length > 0) {
+            resourcesLoaded.react = true;
+            observer.disconnect();
+            checkAllResourcesLoaded();
+          }
         });
+
+        if (document.readyState === "loading") {
+          document.addEventListener("DOMContentLoaded", () => {
+            const root = document.getElementById("root");
+            if (root) {
+              observer.observe(root, { childList: true, subtree: true });
+            }
+            checkCriticalImages();
+          });
+        } else {
+          const root = document.getElementById("root");
+          if (root) {
+            if (root.children.length > 0) {
+              resourcesLoaded.react = true;
+            } else {
+              observer.observe(root, { childList: true, subtree: true });
+            }
+          }
+          checkCriticalImages();
+        }
+
+        setTimeout(() => {
+          hideLoadingSkeleton();
+        }, 5000);
       } else {
         document.getElementById("loading-skeleton")?.remove();
       }
